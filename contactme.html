@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .contact-form {
+            background-color: #120f0f;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            z-index: 2;
+        }
+        .contact-form h2 {
+            text-align: center;
+            color: #eb0404;
+            margin-bottom: 20px;
+        }
+        .contact-form label {
+            color: #f00303;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #e54343;
+            border-radius: 4px;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #bc5b1a;
+        }
+        .contact-form button {
+            background-color: #040505;
+            color: #dd3a3a;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .contact-form button:hover {
+            background-color: #e2c0aa;
+        }
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgb(224, 8, 8) 0%, rgba(225, 8, 8, 0) 70%);
+            opacity: 0.6;
+            animation: move 10s infinite ease-in-out;
+        }
+        .circle:nth-child(1) {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+        .circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: 30%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+        .circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 60%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+        .circle:nth-child(4) {
+            width: 250px;
+            height: 250px;
+            top: 80%;
+            left: 10%;
+            animation-delay: 6s;
+        }
+        @keyframes move {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-50px) translateX(-50px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <div class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="mailto:suyashtiwari673@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>

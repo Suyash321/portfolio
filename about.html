@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Section</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        #about {
+            width: 60%;
+            padding: 20px;
+            background-color: rgb(7, 5, 5);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            z-index: 1;
+        }
+        #about.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        h2, h3 {
+            text-align: center;
+            color: #c20c0c;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .projects {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .project {
+            background-color: #150e0e;
+            padding: 15px;
+            margin: 0 10px;
+            border-left: 4px solid #1abc9c;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s ease;
+            flex: 1;
+            text-align: center;
+        }
+        .project h3 {
+            margin-top: 0;
+            transition: opacity 0.3s ease;
+        }
+        .project p {
+            display: none;
+            margin: 0;
+        }
+        .project:hover {
+            background-color: #d84f4f;
+        }
+        .project:hover h3 {
+            opacity: 0.3;
+        }
+        .project:hover p {
+            display: block;
+        }
+        .project i {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #1abc9c;
+        }
+
+        /* Background Animation */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: move 10s infinite;
+        }
+
+        .circle:nth-child(1) {
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 0, 0, 0.5);
+            top: 10%;
+            left: 10%;
+            animation-duration: 12s;
+        }
+        .circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            background: rgba(206, 12, 12, 0.5);
+            top: 50%;
+            left: 30%;
+            animation-duration: 15s;
+        }
+        .circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background: rgba(215, 7, 7, 0.5);
+            top: 80%;
+            left: 70%;
+            animation-duration: 10s;
+        }
+        .circle:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            background: rgba(202, 51, 20, 0.5);
+            top: 20%;
+            left: 80%;
+            animation-duration: 18s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(50px) translateX(50px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    
+    <div id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Suyash Tiwari, a passionate full-stack developer with a keen interest in building efficient and scalable web applications. With expertise in HTML, CSS, JavaScript, React, and Node.js, I strive to deliver clean, maintainable code and intuitive user experiences. Explore my projects to see how I innovate through technology.</p>
+        <div class="projects">
+            <div class="project" onclick="location.href='https://suyash321.github.io/sidcupgolf/';">
+                <i class="fas fa-code"></i>
+                <h3>Project One</h3>
+                <p>The Sidcup Family Golf website uses HTML and CSS for structure and styling, JavaScript for interactivity, and GSAP with ScrollTrigger for animations. It includes video backgrounds and web fonts for a visually appealing and dynamic user experience.</p>
+            </div>
+            <div class="project" onclick="location.href='https://project2.com';">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Project Two</h3>
+                <p>Uploaded Soon</p>
+            </div>
+            <div class="project" onclick="location.href='https://project3.com';">
+                <i class="fas fa-share-alt"></i>
+                <h3>Project Three</h3>
+                <p>Uploaded Soon </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutSection = document.getElementById('about');
+            aboutSection.classList.add('visible');
+        });
+    </script>
+</body>
+</html>
